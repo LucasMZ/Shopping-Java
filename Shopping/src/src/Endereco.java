@@ -1,6 +1,4 @@
 package src;
-
-
 public class Endereco {
 	public String nomeDaRua;
 	public String cidade;
@@ -8,13 +6,30 @@ public class Endereco {
 	public String pais; 
 	public String cep;
 	public String numero;
+	public Endereco endereco;
 	public String complemento;
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public Data data;
+	public Data DataFundacao;
 
+	public Data data(Data dia, Data mes, Data ano,Data DataFundacao) {
+		return data;
+	}
+	public Endereco getEndereco(Endereco endereco) {
+		return endereco;
+	}
+	public Endereco setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+		return endereco;
+	}
+	public Data GetDataFundacao(Data data) {
+		return data;
+	}
+	public Data SetDataFundacao(Data data) {
+		this.data = data;
+		return data;
 	}
 	// metodo construtor
-	public Endereco(String nomeDaRua,String cidade, String estado, String pais, String cep, String numero,String complemento ) {
+	public Endereco(String cep, String cidade, String estado, String numero, String pais, String nomeDaRua, String complemento ) {
 		this.cep = cep;
 		this.cidade = cidade;
 		this.estado = estado;
@@ -45,7 +60,6 @@ public String GetNomeDaRua() {
 public String GetNumero() {
 	return numero;
 }
-
 // métodos setter
 public String SetCep(String cep) {
 	this.cep = cep;

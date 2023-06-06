@@ -1,15 +1,33 @@
 package src;
 
 public class Data {
-public Integer dia;
-public Integer ano;
-public Integer mes;
+public String dia;
+public int ano;
+public String mes;
+public int DataVencimento;
+	
+	// TODO Auto-generated constructor stub
+
+	
+	public Data(String dia, String mes, int ano,int DataVencimento) {
+		this.dia = dia;
+		this.ano = ano;
+		this.mes = mes;
+		this.DataVencimento = DataVencimento;
+}
+	public Data() {
+		// TODO Auto-generated constructor stub
+	}
 	public static void main(String[] args) {
 		
 			// TODO Auto-generated method stub
-		Data data = new Data(13,06,2008);
-		
-			data.verificaBissexto(data.setAno(2012));
+		Data data = new Data();
+		System.out.println(data.toString());
+		data.setDataVencimento(2023);
+		data.setAno(2008);
+		data.setMes("02");
+		data.setDia("11");
+		data.verificaBissexto(data.getAno());
 	}
 	public void verificaBissexto(Integer ano) {
 		ano = this.getAno();
@@ -18,35 +36,46 @@ public Integer mes;
         } else {
             System.out.println(ano + " não é bissexto.");
         }
-		
-
+	}
+	
+	public String toString() {
+		return this.dia + "/" + this.mes + "/" + this.ano;
 		
 	}
-	public Data(Integer dia, Integer mes, Integer ano) {
-		this.dia = dia;
-		this.mes = mes;
-		this.ano = ano;
-	}
-	public int getDia() {
+	public String getDia(String dia) {
 		return dia;
 	}
 	public int getAno() {
-		return mes;
+		return ano;
 	}
-	public int getMes() {
+	public String getMes(String mes) {
 		return mes;
 	}
 	//setters
-	public int setDia(Integer dia) {
+	public String setDia(String dia) {
 		this.dia = dia;
 		return dia;
 	}
 	public int setAno(Integer ano) {
-		this.mes = ano;
+		this.ano = ano;
 		return ano;
 	}
-	public int setMes(Integer mes) {
+	public String setMes(String mes) {
 		this.mes = mes;
 		return mes;
 	}
+	public boolean compareTo(Data dataValidade) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public int setDataVencimento(int DataVencimento) {
+		this.DataVencimento = DataVencimento;
+		return DataVencimento;	
+		}
+	
+
+
+
+	
 }
