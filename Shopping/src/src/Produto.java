@@ -17,10 +17,10 @@ public Integer i;
         this.ano = ano;
        this.ano2 = ano2;
     }
-	public Produto() {
+	public Produto(String string, int j, Data d1) {
 		// TODO Auto-generated constructor stub
 	}
-	public boolean estaVencido() {
+	public boolean estaVencido(Data data) {
 			if(this.getAno() > this.getDataValidade(ano2)) {
 				return true;
 			}
@@ -30,10 +30,13 @@ public Integer i;
 		 Produto produto = new Produto(dia, preco, dia, ano, ano);
 		produto.getDataValidade(ano2);
 		System.out.println(produto.getAno());
-		System.out.println(produto.estaVencido());
-		return produto.GetNome();
+		System.out.println(produto.estaVencido(null));
+		return produto.getNome();
 	}
 	public int getDataValidade(int ano2) {
+		return ano2;
+	}
+	public int setDataValidade(Data DataValidade) {
 		this.ano2 = ano2;
 		return ano2;
 	}
@@ -59,17 +62,17 @@ public Integer i;
 		this.mes = mes;
 		return mes;
 	}
-	public String GetNome() {
+	public String getNome() {
 		return nome;
 	}
-	public Double GetPreco() {
+	public Double getPreco() {
 		return preco;	
 	}
-	public String SetNome(String nome) {
+	public String setNome(String nome) {
 		this.nome = nome;
 		return nome;
 	}
-	public Double SetPreco(double preco) {
+	public Double setPreco(double preco) {
 		this.preco = preco;
 		return preco;
 	}

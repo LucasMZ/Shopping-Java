@@ -11,24 +11,6 @@ public class Endereco {
 	public Data data;
 	public Data DataFundacao;
 
-	public Data data(Data dia, Data mes, Data ano,Data DataFundacao) {
-		return data;
-	}
-	public Endereco getEndereco(Endereco endereco) {
-		return endereco;
-	}
-	public Endereco setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-		return endereco;
-	}
-	public Data GetDataFundacao(Data data) {
-		return data;
-	}
-	public Data SetDataFundacao(Data data) {
-		this.data = data;
-		return data;
-	}
-	// metodo construtor
 	public Endereco(String cep, String cidade, String estado, String numero, String pais, String nomeDaRua, String complemento ) {
 		this.cep = cep;
 		this.cidade = cidade;
@@ -38,54 +20,72 @@ public class Endereco {
 		this.nomeDaRua = nomeDaRua;
 		this.complemento = complemento;
 	}
-	// metodos getter
-	public String GetCep() {
-		return cep;
+	public Data data(Data dia, Data mes, Data ano,Data DataFundacao) {
+		return data;
 	}
-public String GetCidade() {
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public Endereco setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+		return endereco;
+	}
+	public Data getDataFundacao(Data data) {
+		return data;
+	}
+	public Data setDataFundacao(Data data) {
+		this.data = data;
+		return data;
+	}
+	
+	// metodos getter
+public String getCep() {
+		return cep;
+}
+public String getCidade() {
 		return cidade;
 	}
-public String GetEstado() {
+public String getEstado() {
 	return estado;
 }
-public String GetPais() {
+public String getPais() {
 	return pais;
 }
-public String GetComplemento() {
+public String getComplemento() {
 	return complemento;
 }
-public String GetNomeDaRua() {
+public String getNomeDaRua() {
 	return nomeDaRua;
 }
-public String GetNumero() {
+public String getNumero() {
 	return numero;
 }
 // métodos setter
-public String SetCep(String cep) {
+public String setCep(String cep) {
 	this.cep = cep;
 	return cep;
 }
-public String SetCidade(String cidade) {
+public String setCidade(String cidade) {
 	this.cidade = cidade;
 	return cidade;
 }
-public String SetEstado(String estado) {
+public String setEstado(String estado) {
 	this.estado = estado;
 return estado;
 }
-public String SetPais(String pais) {
+public String setPais(String pais) {
 	this.pais = pais;
 return pais;
 }
-public String SetComplemento(String complemento) {
+public String setComplemento(String complemento) {
 	this.complemento = complemento;
 return complemento;
 }
-public String SetNomeDaRua(String nomeDaRua) {
+public String setNomeDaRua(String nomeDaRua) {
 this.nomeDaRua = nomeDaRua;
 return nomeDaRua;
 }
-public String SetNumero(String numero) {
+public String setNumero(String numero) {
 	this.numero = numero;
 return numero;
 }

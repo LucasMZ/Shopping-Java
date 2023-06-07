@@ -11,6 +11,7 @@ public Cosmetico(String nomeDoProduto, String marca, Double taxaDeComercializaca
 	this.nomeDoProduto = nomeDoProduto;
 	this.taxaDeComercializacao = taxaDeComercializacao;
 }
+
 public String getMarca() {
 	return marca;
 }

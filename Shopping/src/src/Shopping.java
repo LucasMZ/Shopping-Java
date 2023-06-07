@@ -1,27 +1,10 @@
 package src;
 
-import java.util.ArrayList;
 
 /*
- No construtor de Shopping, receba informações para
-inicializar o nome, o endereço e, também, receba a quan:dade máxima de lojas
-deste shopping (do :po inteiro). No construtor de shopping, então, instancie o
-array lojas, informando a capacidade dele de acordo com o valor recebido por
-parâmetro. Naturalmente, quando um Shopping for criado, ele não terá lojas
-ainda, apenas o espaço em memória necessário para armazená-las. Crie os
-métodos de acesso dos atributos. Implemente o método toString nesta
-classe, retornando uma String formatada da forma que você desejar, desde
-que contenha as informações de todos os atributos da classe.
-• Na classe Shopping, crie os seguintes métodos:
-o insereLoja: este método recebe um objeto do :po Loja por
-parâmetro e insere esta loja no array lojas, na primeira posição livre do
-array (ou seja, a primeira posição nula). O método retorna verdadeiro caso
-a loja seja inserida corretamente e falso caso contrário (ou seja, caso não
-haja lugar no array).
-o removeLoja: este método recebe uma String que representa o nome
-de uma loja e remove a loja com este nome do array lojas. O método
-retorna verdadeiro caso a loja seja removida e falso caso contrário (caso
-não haja a loja com o nome solicitado no array).
+
+
+
 o quantidadeLojasPorTipo: este método recebe como parâmetro
 uma String que indica o :po de loja que deve ser buscado (Cosmé:co,
 Vestuário, Bijuteria, Alimentação ou Informá:ca). Deve-se então retornar
@@ -37,28 +20,78 @@ public class Shopping {
 public String nome;
 public Endereco endereco;
 public Integer qtdLojas;
-ArrayList<Loja> lojas = new ArrayList<Loja>();
+public Integer qtd;
+public String[] lojas;
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
 	}
-	public Shopping(String nome, ArrayList<Loja> lojas, Endereco endereco,Integer qtdLojas) {
+	
+	public Shopping(String nome, Endereco endereco,Integer qtdLojas, String[] lojas) {
 		this.endereco = endereco;
 		this.nome = nome;
-		this.lojas = lojas;
 		this.qtdLojas = qtdLojas;
+		this.lojas = lojas;
+		
 	}
-	public void insereLoja(String nome) {
-		Loja loja = new Loja();
-		loja.nome = "zeca bijuteria";
-		var nomeDLoja = loja.nome;
-		lojas.add(loja.nomeDloja);
+public String quantidadeLojasPorTipo() {
+	return nome;
+	
+}
+public String getNome() {
+			return nome;
 	}
-	public void removeLoja(Object loja) {
-		if(lojas.contains(nome)) {
-			lojas.get(1);
+public Endereco getEndereco() {
+	return endereco;
+}
+	public boolean insereLoja(Object Loja) {
+		for(var i = 0; i < lojas.length;i++) {
+			Loja lojinha = new Loja();
+			if(i == 0) {
+				lojas[i] = lojinha.nome;
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean removeLoja() {
+		for(var i = 0; i < lojas.length;i++) {
+			if(lojas[i].equals(nome)) {
+			lojas[i] = null;
+			}
+		}
+		return false;
+	}
+	public String setNome(String nome) {
+		this.nome = nome;
+		return nome;
+		
+	}
+	
+	public void quantidadeLojasPorTipo(String tipo) {
+		
+		for(var i = 0; i < lojas.length;i++) {
+			if(tipo.equalsIgnoreCase("Vestuario")){
+				if(lojas[i] instanceof Vestuario) {
+					qtd++;
+				}
+			}
+				if(tipo.equalsIgnoreCase("Cosmetico")){
+					if(lojas[i] instanceof Cosmetico) {
+						qtd++;
+					}
+				}
+					if(tipo.equalsIgnoreCase("Alimentacao")){
+						if(Shopping.lojas[i] instanceof Alimentacao) {
+							qtd++;
+						}
+					}
+			}
 		}
 	}
 
-}
+	
+
+
+

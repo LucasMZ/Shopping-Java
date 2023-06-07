@@ -1,7 +1,7 @@
 package src;
 public class Loja{
 	public String nome;
-	public Integer qtdFuncionarios;
+	public int qtdFuncionarios;
 	public Double SalarioBaseFuncionario;
 	public Data data;
 	public Data DataFundacao;
@@ -12,32 +12,36 @@ public class Loja{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub		
 		//funcionario.SalarioBaseFuncionario = -1.0;
-		Loja funcionario = new Loja(null, null, null);
-		funcionario.imprimeProdutos();
-		funcionario.setQtdFuncionario(4);
-		funcionario.SalarioBaseFuncionario = 400.0;
-		funcionario.getSalarioBase();
-		funcionario.toString();
-		
+
 	}
-	public Loja(String nome,Integer qtdFuncionarios, Double SalarioBaseFuncionario) {
+	public Loja(String nome,Integer qtdFuncionarios, Double SalarioBaseFuncionario, int j, Endereco e1, Data d1, int k ) {
         this.nome = nome;
         this.qtdFuncionarios = qtdFuncionarios;
-        this.SalarioBaseFuncionario = SalarioBaseFuncionario;         
+        this.SalarioBaseFuncionario = -1.0; 
+       
     }
-	public Loja() {
-		// TODO Auto-generated constructor stub
-	}
-	public int setQtdFuncionario(Integer qtdFuncionarios) {
+	public int setQuantidadeFuncionarios(int qtdFuncionarios) {
 		 this.qtdFuncionarios = qtdFuncionarios;
+		 return qtdFuncionarios;
+	}
+	public int getQuantidadeFuncionarios() {
 		 return qtdFuncionarios;
 	}
 	public Data data(Data dia, Data mes, Data ano,Data DataFundacao) {
 		return data;
 	}
-	public Endereco GetEndereco(Endereco endereco) {
+	public Endereco GetEndereco() {
 		return endereco;
 	}
+	/*
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	/*
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	*/
 	public Endereco SetEndereco(Endereco endereco) {
 		this.endereco = endereco;
 		return endereco;
@@ -54,7 +58,7 @@ public class Loja{
 	}
 	public boolean insereProduto() {
 		for(i = 0; i < estoqueProdutos.length;i++) {
-			Produto produto = new Produto();
+			Produto produto = new Produto(nome, SalarioBaseFuncionario, nome, i, i);
 			if(i == 0) {
 				estoqueProdutos[i] = produto.nome;
 				return true;
@@ -71,8 +75,12 @@ public class Loja{
 		}
 		return false;
 	}
-	public Double getSalarioBase() {
+	public double getSalarioBaseFuncionario() {
 		return SalarioBaseFuncionario;
+	}
+	
+	public void setSalarioBaseFuncionario(double SalarioBaseFuncionario) {
+		this.SalarioBaseFuncionario = SalarioBaseFuncionario;
 	}
 	public int set() {
 		return 0;
@@ -100,11 +108,24 @@ public class Loja{
 		return 0;
 	}
 	public String toString() {
-		System.out.println("Tamanho da loja " + tamanhoDaLoja()+ "\n Salario Base:" + getSalarioBase() +" \n Gastos com salario:"+ gastosComSalario());
-		System.out.println("Endereco é:" + GetEndereco(endereco));
+		System.out.println("Tamanho da loja " + tamanhoDaLoja()+ "\n Salario Base:" + getSalarioBaseFuncionario() +" \n Gastos com salario:"+ gastosComSalario());
+		System.out.println("Endereco é:" + GetEndereco());
 		System.out.println("Data de fundacao é:" + getDataFundacao());
 		System.out.println("");
 		return null;
 		
 	}
+	public String setNome(String nome) {
+		this.nome = nome;
+		return nome;
+		
+	}
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return nome;
+	}
+	
+	
+	
+	
 }
